@@ -46,3 +46,12 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'factory_girl_rails'
+  gem 'rspec-its'
+  gem 'json_expressions'
+end
+
+gem 'devise'
+gem 'swaggard', '~> 0.1'
+gem 'active_model_serializers'
