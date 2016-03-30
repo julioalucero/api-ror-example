@@ -5,4 +5,8 @@ module BusinessConcern
     @users_business ||= Business::Users.new
   end
 
+  def sessions_business
+    @sessions_business ||= Business::Sessions.new
+  end
+
 end

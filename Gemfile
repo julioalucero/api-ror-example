@@ -55,3 +55,8 @@ end
 gem 'devise'
 gem 'swaggard', '~> 0.1'
 gem 'active_model_serializers'
+gem 'yew'
+
+gem 'omniauth-twitter', '~> 1.2.1'
+gem 'omniauth-google-oauth2'
+gem 'certified'

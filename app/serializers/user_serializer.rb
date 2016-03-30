@@ -4,6 +4,10 @@
 # @attr [boolean] notification
 class UserSerializer < BaseSerializer
 
-  attributes :id, :email, :theme, :notification
+  attributes :id
+  attributes :email
+  attributes :theme
+  attributes :notification
+  attributes :authentication_token
 
 end

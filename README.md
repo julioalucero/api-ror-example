@@ -6,9 +6,10 @@ Rails version: 4.2.6
 
 ## To install and use it
 
-Copy the example files in config/. folder:
+Copy the example files in config/. folder and complete it with real data:
 
     mv config/database.yml.example config/database.yml
+    mv config/omniauth.yml.example config/omniauth.yml
 
 Then run
 

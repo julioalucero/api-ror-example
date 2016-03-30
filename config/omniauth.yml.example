@@ -1,0 +1,29 @@
+development:
+  twitter:
+    app_key: ZSgJwAXEXpzXLY0FHOVQA
+    app_secret: hrtICYy3DtCjcngWI9b1p45wH8Gr4DS2dMwCdT1eUo
+    access_token: 666
+    access_token_secret: 666
+  google:
+    google_client_id: 23432432
+    google_client_secret: 23423432
+
+test:
+  twitter:
+    app_key:
+    app_secret:
+    access_token: 666
+    access_token_secret: 666
+  google:
+    google_client_id: 23432432
+    google_client_secret: 23423432
+
+production:
+  twitter:
+    app_key: CFAYvv4D3rPGzxcTWKUw
+    app_secret: LCUuYfP8n2PtSktwIKtHFy00fQu2frTi2dYtFWEJhhE
+    access_token: 666
+    access_token_secret: 666
+  google:
+    google_client_id: 23432432
+    google_client_secret: 23423432

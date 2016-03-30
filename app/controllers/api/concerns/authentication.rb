@@ -13,4 +13,8 @@ module Authentication
     end
   end
 
+  def set_current_user(user)
+    @current_user = user
+  end
+
 end

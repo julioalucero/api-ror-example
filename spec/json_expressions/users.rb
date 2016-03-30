@@ -5,10 +5,11 @@ module JsonExpression
 
     def user(user)
       {
-        id:           user.id,
-        email:        user.email,
-        theme:        user.theme,
-        notification: user.notification
+        id:                   user.id,
+        email:                user.email,
+        theme:                user.theme,
+        notification:         user.notification,
+        authentication_token: user.authentication_token
       }
     end
 
