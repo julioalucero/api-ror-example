@@ -1,7 +1,8 @@
 module Business
   class Users < Business::Base
 
-    PERMITTED_CREATE_ATTRS  = [:email, :password, :theme, :notification]
+    PERMITTED_UPDATE_ATTRS  = [:email, :password, :theme, :notification]
+    PERMITTED_CREATE_ATTRS  = PERMITTED_UPDATE_ATTRS
 
     # Creates a new user.
     #
@@ -34,10 +35,26 @@ module Business
       user
     end
 
+    # Updates a user
+    #
+    # If the given params are valid then the returned user is persisted
+    # otherwise it is not.
+    #
+    # @param [Hash] attrs The attributes to update on the user
+    def update(user, attrs)
+      if user.update(permit_user_update_attrs(attrs))
+        User.token_cached(user.authentication_token)
+      end
+    end
+
     private
 
     def permit_user_create_attrs(attrs)
       permit_attrs(attrs, PERMITTED_CREATE_ATTRS)
+    end
+
+    def permit_user_update_attrs(attrs)
+      permit_attrs(attrs, PERMITTED_UPDATE_ATTRS)
     end
 
   end

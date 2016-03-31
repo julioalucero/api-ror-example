@@ -35,6 +35,11 @@ RSpec.configure do |config|
 
     if example.metadata[:type] == :controller
       request.headers['accept'] = 'application/json'
+
+      unless example.metadata[:skip_login]
+        user = create(:user)
+        authenticate_user(user)
+      end
     end
 
   end

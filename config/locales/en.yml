@@ -21,4 +21,5 @@
 
 en:
   session:
+    invalid_token: "Invalid Token"
     email_password_incorrect: "E-mail/Password is incorrect"

@@ -6,4 +6,11 @@ class User < ActiveRecord::Base
   def generate_authentication_token!
     update_attribute(:authentication_token, Devise.friendly_token)
   end
+
+  def self.token_cached(token)
+    return unless token
+
+    User.find_by_authentication_token(token)
+  end
+
 end

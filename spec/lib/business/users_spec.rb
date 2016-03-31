@@ -116,4 +116,40 @@ describe Business::Users do
 
   end
 
+  describe '#update' do
+
+    let(:user)          { create(:user) }
+
+    context 'with valid params' do
+      let(:valid_attributes) { { theme: Enums::UserThemes::PREMIUM } }
+
+      describe 'the returned user' do
+
+        subject { user }
+
+        before { business.update(user, valid_attributes) }
+
+        its(:valid?)  { should be(true) }
+        its(:theme)   { should eq(valid_attributes[:theme]) }
+
+      end
+    end
+
+    context 'with invalid params' do
+      let(:invalid_attributes) { attributes_for(:user).merge(email: 'im_not_a_valid_email.org') }
+
+      describe 'the returned user' do
+
+        subject { user }
+
+        before { business.update(user, invalid_attributes) }
+
+        its(:valid?)      { should be(false) }
+        its(:email)       { should eq(invalid_attributes[:email]) }
+
+      end
+    end
+
+  end
+
 end

@@ -13,4 +13,21 @@ describe User do
     end
 
   end
+
+  describe '.token_cached' do
+
+    it 'returns the user that matches the given token' do
+      expect(User.token_cached(user.authentication_token)).to eq(user)
+    end
+
+    it 'returns nil when no user has the given token' do
+      expect(User.token_cached('invalid')).to be_nil
+    end
+
+    it 'returns nil when token is nil' do
+      expect(User.token_cached(nil)).to be_nil
+    end
+
+  end
+
 end
