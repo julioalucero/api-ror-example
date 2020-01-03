@@ -20,8 +20,18 @@ After that you can go to [localhost:3000/swagger](http://localhost:3000/swagger)
 
 ## Technologies and notes
 
-All the business logic is inside the lib/business folder. The classes inside this module are
-responsable of the CRUD actions, and all the business logic.
+### Api Base
+
+[Api::BaseController](https://github.com/julioalucero/-api-ror-example/blob/master/app/controllers/api/base_controller.rb#L4-L6) is the module that contains the 3 principals concerns:
+    - [Authentication](https://github.com/julioalucero/-api-ror-example/blob/master/app/controllers/api/concerns/authentication.rb). To handle *authentication* and *current_user* 
+    - [Responses](https://github.com/julioalucero/-api-ror-example/blob/master/app/controllers/api/concerns/responses.rb). To handle *models_validation_errors_response*
+    - [BusinessConcern](https://github.com/julioalucero/-api-ror-example/blob/master/app/controllers/api/concerns/business_concern.rb). To handle the business_logic access
+
+
+
+### Business Logic
+All the business logic is inside the lib/business folder.
+The classes inside this module are responsable of the CRUD actions, and all the business logic.
 
 ### active_model_serializers
 Permit to create serializers files in order to generate and render the json responses.
@@ -29,6 +39,12 @@ Permit to create serializers files in order to generate and render the json resp
 ### json_expressions
 Use to test the exactly match expression on the test.
 
+### Constants
+All the constants lives under **lib/enums/\*.rb** files.
+
+### Tests
+Using [match_json](https://github.com/julioalucero/-api-ror-example/blob/master/spec/support/helpers/responses.rb#L4) method in the test you can compare the returned API JSON with the fake one created on the test under *spec/json_expressions/\*.rb* files. Example of [users](https://github.com/julioalucero/-api-ror-example/blob/master/spec/json_expressions/users.rb)
+    
 ### Swaggard
 
 Swaggard is a Rails Engine that can be used to document a REST api.
